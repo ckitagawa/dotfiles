@@ -1,0 +1,86 @@
+! uxrvt
+URxvt*scrollBar: false
+URxvt*urlLauncher: chromium
+URxvt*font: xft:Droid Sans Mono for Powerline:size=8
+URxvt*loginShell: true
+URxvt*saveLines: 10000
+
+! Extensions
+URxvt.perl-ext: true
+URxvt.perl-ext-common: default,selection-to-clipboard,matcher,keyboard-select,clipboard
+URxvt.url-launcher: /usr/bin/chromium
+URxvt.matcher.button: 1
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.underlineURLs: True
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+URxvt.clipboard.autocopy: true
+
+URxvt*background: #101010
+URxvt*foreground: #d0d0d0
+URxvt*cursorColor: #d0d0d0
+URxvt*color0: #101010
+URxvt*color1: #960050
+URxvt*color2: #66aa11
+URxvt*color3: #c47f2c
+URxvt*color4: #30309b
+URxvt*color5: #7e40a5
+URxvt*color6: #3579a8
+URxvt*color7: #9999aa
+URxvt*color8: #303030
+URxvt*color9: #ff0090
+URxvt*color10: #80ff00
+URxvt*color11: #ffba68
+URxvt*color12: #5f5fee
+URxvt*color13: #bb88dd
+URxvt*color14: #4eb4fa
+URxvt*color15: #d0d0d0
+
+URxvt*VT100.Translations: #override \
+                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+                 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
+
+! UXTerm Fallback
+UXTerm*scrollbar: false
+
+UXTerm*background: #101010
+UXTerm*foreground: #d0d0d0
+UXTerm*cursorColor: #d0d0d0
+UXTerm*color0: #101010
+UXTerm*color1: #960050
+UXTerm*color2: #66aa11
+UXTerm*color3: #c47f2c
+UXTerm*color4: #30309b
+UXTerm*color5: #7e40a5
+UXTerm*color6: #3579a8
+UXTerm*color7: #9999aa
+UXTerm*color8: #303030
+UXTerm*color9: #ff0090
+UXTerm*color10: #80ff00
+UXTerm*color11: #ffba68
+UXTerm*color12: #5f5fee
+UXTerm*color13: #bb88dd
+UXTerm*color14: #4eb4fa
+UXTerm*color15: #d0d0d0
+
+UXTerm*faceName: Droid Sans Mono for Powerline
+UXTerm*faceSize: 9
+
+xterm*VT100.Translations: #override \
+                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+                 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
+
+! Enable the extended coloring options
+rofi.color-enabled: true
+
+! Property Name     BG       Border   Separator
+rofi.color-window:  #393F45, #393F45, #1C2023
+
+! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
+rofi.color-normal:  #393F45, #C7CCD1, #393F45, #393F45, #F3F4F5
+rofi.color-active:  #393F45, #AE95C7, #393F45, #393F45, #AE95C7
+rofi.color-urgent:  #393F45, #C7AE95, #393F45, #393F45, #C7AE95
+
+! Set the desired separator style
+rofi.separator-style: solid
