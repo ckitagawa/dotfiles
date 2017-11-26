@@ -43,12 +43,13 @@ module-margin-right = 1
 
 font-0 = Droid Sans Mono for Powerline:size=8:antialias=true;0
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-2 = Material\-Design\-Iconic\-Font:style=Design-Iconic-Font:fontformat=truetype:size=12:antialias=true;0
+;font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = date
-; optional: memory, ram
-modules-right = temperature wlan eth battery 
+; optional: memory, ram, wlan, eth
+modules-right = temperature network battery 
 
 tray-position = right
 tray-padding = 1
@@ -172,6 +173,16 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
+[module/network]
+type = custom/script
+
+; nmcli -f ACTIVE,SIGNAL dev wifi list | awk '$1=="yes" {print $2}'
+exec = $HOME/polybar/bazel-bin/network/network
+label = " %output% "
+click-left = "nm-connection-editor"
+interval = 60
+format-underline = ${colors.primary}
+
 [module/eth]
 type = internal/network
 interface = enp2s0
@@ -208,22 +219,24 @@ battery = BAT0
 adapter = AC0
 full-at = 98
 
-label-charging = " CHG %percentage% %time% "
+label-charging = "  %percentage% "
 format-charging = <label-charging>
 format-charging-underline = ${colors.primary}
 
-label-discharging = " BAT %percentage% "
-format-discharging = <label-discharging>
+label-discharging = "%percentage% "
+format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-label-full = " FULL "
+label-full = "  "
 format-full = <label-full>
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
+ramp-capacity-foreground = ${colors.foreground}
 
 animation-charging-0 = 
 animation-charging-1 = 

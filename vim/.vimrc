@@ -86,6 +86,8 @@ map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
 omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 let g:LatexBox_latexmk_async=1
 let g:LatexBox_viewer='mupdf'
+" This sometimes needs to be turned off if using minted.
+" let g:LatexBox_custom_indent=0
 
 " codefmt
 augroup autoformat_settings
@@ -115,7 +117,9 @@ set ttyfast
 " General
 set number
 set spell
-set colorcolumn=80,100
+" Set rulers off by 1 as otherwise the last char is on the rule. 101 is for
+" MidSun. 81 is for everything else.
+set colorcolumn=81,101
 
 " GUI if using gvim
 set guioptions-=m  "remove menu bar
@@ -166,6 +170,9 @@ nnoremap  <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
 nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
 " i: Find files #including this file
 nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
+
+" ALE
+let g:ale_lint_on_text_changed = 'never'
 
 " Airline
 " set laststatus=2

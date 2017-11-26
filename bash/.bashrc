@@ -31,6 +31,9 @@ source /usr/share/git/completion/git-prompt.sh
 export LD_LIBRARY_PATH=Downloads/ncurses/usr/lib/
 
 # Aliases
+alias grep="rg"
+alias sg="grep"
+
 #alias ls='ls --color=auto'
 alias df="df -h"
 alias pacman="sudo pacman"
